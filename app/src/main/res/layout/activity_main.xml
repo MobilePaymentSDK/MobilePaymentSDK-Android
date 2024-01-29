@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:background="@color/colorPrimary"
+            app:titleTextColor="@color/white"
+            app:titleCentered="true"
+            android:layout_height="?attr/actionBarSize" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin"
+            android:src="@drawable/payone_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/fab_margin"
+            app:layout_constraintBottom_toTopOf="@+id/materialButton"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_Amount"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="match_parent"
+                    android:layout_margin="@dimen/fab_margin"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:hint="@string/amount"
+                        android:layout_height="match_parent"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:id="@+id/amount_hint"
+                    app:layout_constraintStart_toStartOf="@id/til_Amount"
+                    app:layout_constraintTop_toBottomOf="@id/til_Amount"
+                    android:layout_marginTop="@dimen/fab_margin"
+                    android:text="@string/amount_without_dot"
+                    android:textColor="@color/colorAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_token"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="match_parent"
+                    app:layout_constraintTop_toBottomOf="@id/amount_hint"
+                    android:layout_margin="@dimen/fab_margin"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:hint="@string/token"
+                        android:layout_height="match_parent"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:id="@+id/token_hint"
+                    app:layout_constraintStart_toStartOf="@id/til_token"
+                    app:layout_constraintTop_toBottomOf="@id/til_token"
+                    android:layout_marginTop="@dimen/fab_margin"
+                    android:text="@string/tokens_separated_by_comma_if_multi"
+                    android:textColor="@color/colorAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_currency"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="match_parent"
+                    app:layout_constraintTop_toBottomOf="@id/token_hint"
+                    android:layout_margin="@dimen/fab_margin"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:hint="@string/currency"
+                        android:layout_height="match_parent"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:id="@+id/currency_hint"
+                    app:layout_constraintStart_toStartOf="@id/til_currency"
+                    app:layout_constraintTop_toBottomOf="@id/til_currency"
+                    android:layout_marginTop="@dimen/fab_margin"
+                    android:text="@string/currency_code_only_one_currency"
+                    android:textColor="@color/colorAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_transaction_id"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="match_parent"
+                    app:layout_constraintTop_toBottomOf="@id/currency_hint"
+                    android:layout_margin="@dimen/fab_margin"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:hint="@string/transaction_id"
+                        android:layout_height="match_parent"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:id="@+id/transaction_id_hint"
+                    app:layout_constraintStart_toStartOf="@id/til_transaction_id"
+                    app:layout_constraintTop_toBottomOf="@id/til_transaction_id"
+                    android:layout_marginTop="@dimen/fab_margin"
+                    android:text="@string/transaction_id_keep_empty_for_auto_generation"
+                    android:textColor="@color/colorAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/is_3ds_secure"
+                    android:layout_width="match_parent"
+                    android:layout_margin="@dimen/fab_margin"
+                    android:layout_height="wrap_content"
+                    android:textIsSelectable="true"
+                    android:text="@string/is_3ds_secure"
+                    android:buttonTint="@color/colorAccent"
+                    app:thumbTint="@color/colorAccent"
+                    android:theme="@style/Widget.Material3.CompoundButton.Switch"
+                    android:checked="true"
+                    android:textColor="@color/colorAccent"
+                    app:layout_constraintStart_toStartOf="@id/transaction_id_hint"
+                    app:layout_constraintTop_toBottomOf="@id/transaction_id_hint"
+                    />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/should_tokenize_card"
+                    android:layout_width="match_parent"
+                    android:layout_margin="@dimen/fab_margin"
+                    android:layout_height="wrap_content"
+                    android:textIsSelectable="true"
+                    android:text="@string/should_tokenize_card"
+                    android:buttonTint="@color/colorAccent"
+                    app:thumbTint="@color/colorAccent"
+                    android:theme="@style/Widget.Material3.CompoundButton.Switch"
+                    android:checked="true"
+                    android:textColor="@color/colorAccent"
+                    app:layout_constraintStart_toStartOf="@id/is_3ds_secure"
+                    app:layout_constraintTop_toBottomOf="@id/is_3ds_secure"
+                    />
+
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/is_card_scan_enabled"
+                    android:layout_width="match_parent"
+                    android:layout_margin="@dimen/fab_margin"
+                    android:layout_height="wrap_content"
+                    android:textIsSelectable="true"
+                    android:text="@string/is_card_scan_enabled"
+                    android:buttonTint="@color/colorAccent"
+                    app:thumbTint="@color/colorAccent"
+                    android:theme="@style/Widget.Material3.CompoundButton.Switch"
+                    android:checked="true"
+                    android:textColor="@color/colorAccent"
+                    app:layout_constraintStart_toStartOf="@id/should_tokenize_card"
+                    app:layout_constraintTop_toBottomOf="@id/should_tokenize_card"
+                    />
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/is_save_card_enabled"
+                    android:layout_width="match_parent"
+                    android:layout_margin="@dimen/fab_margin"
+                    android:layout_height="wrap_content"
+                    android:textIsSelectable="true"
+                    android:text="@string/is_save_card_enabled"
+                    android:buttonTint="@color/colorAccent"
+                    app:thumbTint="@color/colorAccent"
+                    android:theme="@style/Widget.Material3.CompoundButton.Switch"
+                    android:checked="true"
+                    android:textColor="@color/colorAccent"
+                    app:layout_constraintStart_toStartOf="@id/is_card_scan_enabled"
+                    app:layout_constraintTop_toBottomOf="@id/is_card_scan_enabled"
+                    />
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/language_spinner"
+                    android:layout_margin="@dimen/fab_margin"
+                    android:layout_width="match_parent"
+                    android:entries="@array/language"
+                    app:layout_constraintTop_toBottomOf="@id/is_save_card_enabled"
+                    android:padding="@dimen/fab_margin"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/type_spinner"
+                    android:layout_margin="@dimen/fab_margin"
+                    android:layout_width="match_parent"
+                    android:entries="@array/payment_type"
+                    app:layout_constraintTop_toBottomOf="@id/language_spinner"
+                    android:padding="@dimen/fab_margin"
+
+                    android:layout_height="wrap_content"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/materialButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_9sdp"
+            android:layout_marginStart="@dimen/mtrl_calendar_day_width"
+            android:layout_marginEnd="@dimen/mtrl_calendar_day_width"
+            android:backgroundTint="@color/white"
+            android:text="@string/pay_now"
+            android:textColor="@color/colorAccent"
+            app:cornerRadius="@dimen/fab_margin"
+            app:layout_constraintTop_toBottomOf="@id/scrollView"
+            app:layout_constraintBottom_toTopOf="@id/Other_API"
+            app:strokeColor="@color/colorAccent"
+            app:strokeWidth="@dimen/m3_timepicker_display_stroke_width"
+            tools:layout_editor_absoluteX="40dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/Other_API"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mtrl_calendar_day_width"
+            android:layout_marginEnd="@dimen/mtrl_calendar_day_width"
+            android:layout_marginBottom="@dimen/_50sdp"
+            android:backgroundTint="@color/colorAccent"
+            android:text="@string/other_api"
+            android:textColor="@color/white"
+            app:cornerRadius="@dimen/fab_margin"
+            app:layout_constraintTop_toBottomOf="@id/materialButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:strokeColor="@color/colorAccent"
+            app:strokeWidth="@dimen/m3_timepicker_display_stroke_width"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:background="@color/colorPrimary"
+            app:titleTextColor="@color/white"
+            app:titleCentered="true"
+            android:layout_height="?attr/actionBarSize" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin"
+            android:src="@drawable/payone_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/fab_margin"
+            app:layout_constraintBottom_toTopOf="@+id/btnCompletion"
+            app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_original_transaction_id"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="match_parent"
+                    android:layout_margin="@dimen/fab_margin"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:hint="@string/amount"
+                        android:layout_height="match_parent" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_Amount"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="match_parent"
+                    android:layout_margin="@dimen/fab_margin"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:hint="@string/amount"
+                        android:layout_height="match_parent" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/amount_hint"
+                    app:layout_constraintStart_toStartOf="@id/til_Amount"
+                    app:layout_constraintTop_toBottomOf="@id/til_Amount"
+                    android:layout_marginStart="@dimen/fab_margin"
+                    android:text="@string/amount_without_dot"
+                    android:textColor="@color/colorAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_currency"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="match_parent"
+                    app:layout_constraintTop_toBottomOf="@id/token_hint"
+                    android:layout_margin="@dimen/fab_margin"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:hint="@string/currency"
+                        android:layout_height="match_parent" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/currency_hint"
+                    app:layout_constraintStart_toStartOf="@id/til_currency"
+                    app:layout_constraintTop_toBottomOf="@id/til_currency"
+                    android:layout_marginStart="@dimen/fab_margin"
+                    android:text="@string/currency_code_only_one_currency"
+                    android:textColor="@color/colorAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/textResponse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_20sdp"
+                   />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCompletion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_9sdp"
+            android:layout_marginStart="@dimen/mtrl_calendar_day_width"
+            android:layout_marginEnd="@dimen/mtrl_calendar_day_width"
+            android:backgroundTint="@color/white"
+            android:text="@string/completion"
+            android:textColor="@color/colorAccent"
+            app:cornerRadius="@dimen/fab_margin"
+            app:layout_constraintTop_toBottomOf="@id/scrollView"
+            app:layout_constraintBottom_toTopOf="@id/btnRefund"
+            app:strokeColor="@color/colorAccent"
+            app:strokeWidth="@dimen/m3_timepicker_display_stroke_width"
+            tools:layout_editor_absoluteX="40dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRefund"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mtrl_calendar_day_width"
+            android:layout_marginEnd="@dimen/mtrl_calendar_day_width"
+            android:layout_marginTop="@dimen/_9sdp"
+            android:backgroundTint="@color/colorAccent"
+            android:text="@string/refund"
+            android:textColor="@color/white"
+            app:cornerRadius="@dimen/fab_margin"
+            app:layout_constraintTop_toBottomOf="@id/btnCompletion"
+            app:layout_constraintBottom_toTopOf="@id/btnInquiry"
+            app:strokeColor="@color/colorAccent"
+            app:strokeWidth="@dimen/m3_timepicker_display_stroke_width" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnInquiry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mtrl_calendar_day_width"
+            android:layout_marginEnd="@dimen/mtrl_calendar_day_width"
+            android:layout_marginBottom="@dimen/_50sdp"
+            android:backgroundTint="@color/colorAccent"
+            android:text="@string/inquiry"
+            android:layout_marginTop="@dimen/_9sdp"
+
+            android:textColor="@color/white"
+            app:cornerRadius="@dimen/fab_margin"
+            app:layout_constraintTop_toBottomOf="@id/btnRefund"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:strokeColor="@color/colorAccent"
+            app:strokeWidth="@dimen/m3_timepicker_display_stroke_width" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
