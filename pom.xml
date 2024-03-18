@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.github.MobilePaymentSDK</groupId>
   <artifactId>MobilePaymentSDK-Android</artifactId>
-  <version>1.0.6</version>
+  <version>1.0.7</version>
   <packaging>pom</packaging>
   <description>Mobile Payment SDK</description>
 </project>
