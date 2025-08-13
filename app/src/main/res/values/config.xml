@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:override="true"
+    tools:ignore="MissingDefaultResource">
+
+    <color name="color_primary">#F8D348</color>
+    <color name="text_color">#717C7D</color>
+    <color name="hint_text_color">#4D717C7D</color>
+    <color name="payment_type_selected_color">#515A5A</color>
+    <color name="card_border_color">#50515A5A</color>
+    <color name="payment_type_unselected_color">#FFFFFF</color>
+    <color name="button_color">#F8D348</color>
+    <color name="button_txt_color">#000</color>
+    <color name="submission_failed_card">#80F7F4F4</color>
+    <color name="submission_failed_image_bg">#80D9D9D9</color>
+    <color name="switch_color">#F8D348</color>
+    <color name="validation_error">#EB001B</color>
+    <color name="fail_seperator_color">#FFFFFF</color>
+    <color name="success_seperator_color">#FFFFFF</color>
+    <color name="success_title_color">#FFFFFF</color>
+    <color name="fail_title_color">#FFFFFF</color>
+    <color name="success_transaction_color">#FFFFFF</color>
+    <color name="fail_transaction_color">#FFFFFF</color>
+    <array name="saved_card_color_gradient_top">
+        <item>#00A7B5</item>
+        <item>#15B078</item>
+    </array>
+    <array name="saved_card_color_gradient_bottom">
+        <item>#155778</item>
+        <item>#02744B</item>
+    </array>
+
+</resources>

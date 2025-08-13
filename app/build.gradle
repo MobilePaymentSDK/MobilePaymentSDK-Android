@@ -47,7 +47,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
-    implementation('com.github.MobilePaymentSDK:MobilePaymentSDK-Android:1.0.5') {
+    implementation('com.github.MobilePaymentSDK:MobilePaymentSDK-Android:1.0.7') {
         configurations {
             implementation.exclude module: 'lifecycle-viewmodel-ktx'
             implementation.exclude group: 'org.jetbrains.kotlin', module :'kotlin-stdlib-jdk8'
